@@ -1,6 +1,6 @@
 
-/*        written by collin for spectre v0.1         */
-/*           last updated on 01-09-2025              */
+/*        written by collin for spectre v0.3         */
+/*           last updated on 02-09-2025              */
 
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
 
@@ -35,10 +35,11 @@ body {
 .greeting {
   color: #aaa;
   font-family: "JetBrains Mono", monospace;
-  font-size: 28px;
+  font-size: 26px;
   margin-bottom: 20px;
-  margin-top: 35vh;
+  margin-top: 40vh;
   width: 100%;
+  transition: all 0.5s;
 }
 
 .searchbar {
@@ -46,10 +47,10 @@ body {
   font-family: "JetBrains Mono", monospace;
   outline: none;
   background-color: #121212;
-  border: 1px solid #222;
+  border: 1px solid #191919;
   color: #aaa;
   padding: 15px 15px;
-  font-size: 14px;
+  font-size: 13px;
   border-radius: 5px;
   position: absolute;
   z-index: 99;
@@ -57,7 +58,7 @@ body {
 
 .helplist {
   background-color: #141414;
-  border: 1px solid #222;
+  border: 1px solid #1a1a1a;
   border-radius: 5px;
   margin-top: 10px;
   width: 300px;
@@ -73,16 +74,20 @@ body {
   width: 100%;
   color: #aaa;
   font-family: "JetBrains Mono", monospace;
-  font-size: 12px;
+  font-size: 11px;
 }
 
 /* ------------------------------------------------- */
 
 .searchbar:focus, .searchbar:hover {
+  border: 1px solid #1c1c1c;
   background-color: #151515;
 }
 
 .searchbar::placeholder {
-  color: #555;
+  color: #444;
 }
 
+.searchbar:focus::placeholder, .searchbar:hover::placeholder {
+  color: #555;
+}
