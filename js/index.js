@@ -213,7 +213,7 @@ document.addEventListener('touchmove', function(e){
 
 window.onload = function() {
   if ( navigator.language == "de-DE" ) {
-    searchbar.placeholder = "Woran denkst du heute so?";
+    searchbar.placeholder = "Was liegt dir so auf dem Herzen?";
   }
 
   footer.innerText = "Spectre "+spectre_version+" · /help"
