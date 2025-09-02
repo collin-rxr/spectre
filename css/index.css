@@ -1,5 +1,5 @@
 
-/*        written by collin for spectre v0.3         */
+/*        written by collin for spectre v0.5         */
 /*           last updated on 02-09-2025              */
 
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
@@ -75,6 +75,16 @@ body {
   color: #aaa;
   font-family: "JetBrains Mono", monospace;
   font-size: 11px;
+}
+
+.footer {
+  color: #333;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 13px;
+  position: fixed;
+  bottom: 15px;
+  width: 100%;
+  text-align: center;
 }
 
 /* ------------------------------------------------- */
