@@ -175,5 +175,9 @@ document.addEventListener('touchmove', function(e){
 
 window.onload = function() {
   updateGreeting()
+  setInterval(function(){
+    updateGreeting()
+  }, 30000)
+
   searchbar.focus();
 };
