@@ -29,12 +29,12 @@ body {
   color: #444;
   margin-left: 20px;
   margin-top: 20px;
-  font-family: "JetBrains Mono", monospace;
+  font-family: Menlo, "JetBrains Mono", monospace;
 }
 
 .greeting {
   color: #aaa;
-  font-family: "JetBrains Mono", monospace;
+  font-family: Menlo, "JetBrains Mono", monospace;
   font-size: 21px;
   margin-bottom: 20px;
   margin-top: 40vh;
@@ -44,7 +44,7 @@ body {
 
 .searchbar {
   width: 300px;
-  font-family: "JetBrains Mono", monospace;
+  font-family: Menlo, "JetBrains Mono", monospace;
   outline: none;
   background-color: #121212;
   border: 1px solid #191919;
@@ -73,13 +73,13 @@ body {
 .helplist p {
   width: 100%;
   color: #aaa;
-  font-family: "JetBrains Mono", monospace;
+  font-family: Menlo, "JetBrains Mono", monospace;
   font-size: 11px;
 }
 
 .footer {
   color: #333;
-  font-family: "JetBrains Mono", monospace;
+  font-family: Menlo, "JetBrains Mono", monospace;
   font-size: 13px;
   position: fixed;
   bottom: 15px;
