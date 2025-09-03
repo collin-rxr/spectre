@@ -1,8 +1,8 @@
 
-//        written by collin for spectre v0.5         //
+//        written by collin for spectre v0.6         //
 //           last updated on 02-09-2025              //
 
-const spectre_version = "v0.5" 
+const spectre_version = "v0.6" 
 
 const searchbar = document.getElementById("searchbar")
 const greeting = document.getElementById("greeting")
@@ -18,12 +18,17 @@ const commands = {
   "/n": "https://netflix.com/search?q=",
   "/mk": "https://megakino.org/browse?keyword=",
   "/fp": "https://filmpalast.to/search/title/",
-  "/s": "https://open.spotify.com/search/",
+  "/sp": "https://open.spotify.com/search/",
+  "/sto": "https://s.to/search?q=",
   "/gh": "https://github.com/search?q=",
+  "/ttv": "https://twitch.tv/search?term=",
+  "/az": "https://amazon.com/s?k=",
+  "/azd": "https://amazon.de/s?k=",
   "/ddg": "https://duckduckgo.com/?q=",
+  "/sc": "https://snapchat.com/add/",
   "/version": 'javascript:alert("Spectre "+spectre_version);location.reload();//',
   "/help": 'javascript:var _ = "";Object.keys(commands).forEach(command => { _ = _ + command + " - " + commands_en[command] + "\\n" });searchbar.value="";alert(_);location.reload();//'
-}
+} 
 
 const commands_en = {
   "/g": "Search with Google",
@@ -34,9 +39,14 @@ const commands_en = {
   "/n": "Search Netflix",
   "/mk": "Search Megakino",
   "/fp": "Search Filmpalast",
-  "/s": "Search Spotify",
+  "/sp": "Search Spotify",
+  "/sto": "Search Serienstream",
   "/gh": "Search GitHub",
+  "/ttv": "Search Twitch",
+  "/az": "Search Amazon",
+  "/azd": "Search Amazon Germany",
   "/ddg": "Search with DuckDuckGo",
+  "/sc": "View a Snapchat Profile",
   "/version": "Show current version",
   "/help": "Show all commands"
 }
@@ -50,14 +60,20 @@ const commands_de = {
   "/n": "Netflix durchsuchen",
   "/mk": "Megakino durchsuchen",
   "/fp": "Filmpalast durchsuchen",
-  "/s": "Spotify durchsuchen",
+  "/sp": "Spotify durchsuchen",
+  "/sto": "Serienstream durchsuchen",
   "/gh": "GitHub durchsuchen",
+  "/ttv": "Twitch durchsuchen",
+  "/az": "Amazon durchsuchen",
+  "/azd": "Amazon Deutschland durchsuchen",
   "/ddg": "Mit DuckDuckGo suchen",
+  "/sc": "Snapchat Profil öffnen",
   "/version": "Aktuelle Version anzeigen",
   "/help": "Alle Befehle zeigen"
 }
 
-var helplist_found_results = false
+var helplist_found_results = false;
+var last_command = false;
 
 // ------------------------------------------------- //
 
@@ -92,9 +108,15 @@ function updateGreeting() {
 
 function showHelpList () {
   helplist.style.display = "block";
+  helplist.style.filter = "opacity(0)"
+  setTimeout(function () {
+    helplist.style.filter = "opacity(1)";
+    helplist.style.marginTop = "17.5px";
+  }, 1)
 }
 
 function hideHelpList () {
+  helplist.style.marginTop = "2.5px";
   helplist.style.display = "none";
 }
 
@@ -148,9 +170,13 @@ searchbar.addEventListener("input", function () {
       searchbar.style.color = "#ddd";
 
       helplist_found_results = true;
-      clearHelpList();
-      createHelpListEntry(command);
-      showHelpList();
+
+      if ( last_command != command ) {
+        clearHelpList();
+        createHelpListEntry(command);
+        showHelpList();
+      }
+      last_command = command
     }
   });
 
@@ -158,6 +184,7 @@ searchbar.addEventListener("input", function () {
     searchbar.style.color = "#aaa"
     clearHelpList();
     hideHelpList();
+    last_command = ""
   }
 });
 

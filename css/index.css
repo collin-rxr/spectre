@@ -1,5 +1,5 @@
 
-/*        written by collin for spectre v0.5         */
+/*        written by collin for spectre v0.6         */
 /*           last updated on 02-09-2025              */
 
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
@@ -60,7 +60,7 @@ body {
   background-color: #141414;
   border: 1px solid #1a1a1a;
   border-radius: 5px;
-  margin-top: 10px;
+  margin-top: 17.5px;
   width: 300px;
   padding: 0px 15px;
   margin-top: 20px;
@@ -68,6 +68,7 @@ body {
   position: absolute;
   z-index: 1;
   display: none;
+  transition: all 0.2s ease-out;
 }
 
 .helplist p {
